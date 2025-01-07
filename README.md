@@ -39,6 +39,19 @@ Prior to exporting, we dropped unwanted columns ('staff _pick','spotlight','cate
 ![image](https://github.com/user-attachments/assets/307e7436-a301-4493-87b2-183eb80be854)<img width="380" alt="Screenshot 2025-01-06 at 7 21 20 PM" src="https://github.com/user-attachments/assets/dfe10d7e-4162-4196-83b8-535b5bd22d8a" />
 
 
+# Part 3: Create the Contacts Dataframe
+**Uploading Contacts Data and Setting Dependencies:**
+Using the same approach as Part 1, we start by importing and reading the "Contacts" Excel file using pd.Read_Excel and converting to a Dataframe using pd.DataFrame. Because this data is in a JSON format (meaning that it contains dictionaries separated by commas), we import new dependencies to read the file (JSON and pprint).
+
+Optionally, the below function can be used to prevent any future warnings to popup when reading through the file:
+_    import warnings
+    warnings.simplefilter(action = 'ignore', category = FutureWarning)_
+
+
+
+
+
+
 
 
 
