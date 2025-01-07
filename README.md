@@ -72,7 +72,14 @@ The below QuickDB reflects the layout of the Database, with datatypes reflective
 
 
 
+Supporting SQL for creating the tables in PostgreSQL can be found in the **"Postgres Database"** folder. 
 
+The 4 CSVs (listed below) are uploaded into their respective tables, and checked for completion by using a "SELECT * FROM.." function.
+
+- campaign
+- category
+- subcategory
+- contacts
 
 
 
