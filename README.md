@@ -36,7 +36,8 @@ Splitting category & subcategory and joining on "category" and "subcategory" we 
 
 Prior to exporting, we dropped unwanted columns ('staff _pick','spotlight','category & sub-category') and export as a CSV to the Resources folder for later use. _See below for final dataframe_
 
-![image](https://github.com/user-attachments/assets/307e7436-a301-4493-87b2-183eb80be854)<img width="637" alt="Screenshot 2024-12-23 at 7 05 04 PM" src="https://github.com/user-attachments/assets/08d57462-f113-46d1-8a37-b356de28995d" />
+![image](https://github.com/user-attachments/assets/307e7436-a301-4493-87b2-183eb80be854)<img width="637" alt="Screenshot 2024-12-23 at 7 05 04 PM" src="https://github.com/user-attachments/assets/090cf9c3-a870-4e82-8a9b-ec41d62969b0" />
+
 
 
 
