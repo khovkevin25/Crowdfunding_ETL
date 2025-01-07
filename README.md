@@ -70,6 +70,7 @@ From this point forward, we are no longer working in Jupyter Notebook and will u
 
 The below QuickDB reflects the layout of the Database, with datatypes reflective of the dataframes created in Jupyter Notebook and Primary/Foreign Key relationships defined:
 
+![image](https://github.com/user-attachments/assets/cdb63beb-f9e1-4f41-bd4d-330ad55b4655)
 
 
 Supporting SQL for creating the tables in PostgreSQL can be found in the **"Postgres Database"** folder. 
