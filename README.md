@@ -43,10 +43,32 @@ Prior to exporting, we dropped unwanted columns ('staff _pick','spotlight','cate
 **Uploading Contacts Data and Setting Dependencies:**
 Using the same approach as Part 1, we start by importing and reading the "Contacts" Excel file using pd.Read_Excel and converting to a Dataframe using pd.DataFrame. Because this data is in a JSON format (meaning that it contains dictionaries separated by commas), we import new dependencies to read the file (JSON and pprint).
 
-Optionally, the below function can be used to prevent any future warnings to popup when reading through the file:
-_    import warnings
-    warnings.simplefilter(action = 'ignore', category = FutureWarning)_
+Optionally, the below function can be used to prevent any future warnings from popping up when reading through the file:
 
+![image](https://github.com/user-attachments/assets/9a51f760-067e-4f74-9222-551effc11ce5)
+
+**Option 1: Python Dictionaries Method:**
+The dictionaries method was used to approach reading and cleaning the file.
+
+With each column as its own dictionary, we started by iterating through each Row. Using the json.loads() function, we defined Column names within each dictionary as "col" and each respective record (ie "Cecilia Velasco") as "item". 
+
+Using a For Loop, we start by looping through each row and pulling _only_ the items/records, removing the column names, and placing each into the list "dict_values". We then take the same approach, looping through each row and pulling _only_ the column names, which are: ['contact_id', 'name', 'email']
+
+Using pd.DataFrame, we create a new dataframe "contact_info" by pulling in the row values and appending them (based on their index in the list) to the three columns defined previously.
+
+**Cleaning Data and Exporting:**
+Splitting on space, we use the str.split function to create two new columns from the "name" column: first_name and last_name. The old column "name" is dropped, and the dataframe is reordered to fit the below: 
+
+![image](https://github.com/user-attachments/assets/bb04cc00-40bc-4b53-b19b-9e98ac03dbf7)
+
+Once the data is cleaned, we export it as our final CSV to the Resources folder.
+
+
+# Part 4: Create Crowdfunding Database
+**Create database schema in QuickDB:**
+From this point forward, we are no longer working in Jupyter Notebook and will use Quick DB and Postgres to create a database using the new CSVs created in previous steps as tables. 
+
+The below QuickDB reflects the layout of the Database, with datatypes reflective of the dataframes created in Jupyter Notebook and Primary/Foreign Key relationships defined:
 
 
 
