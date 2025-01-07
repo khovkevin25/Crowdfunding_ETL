@@ -1,6 +1,6 @@
 # Crowdfunding_ETL
 
-The Crowdfunding ETL Project incorporates skills from previous modules around data uploading, table creation and data manipulation in Python. In this project, we upload and clean data from two excel files, which contain data around crowdfunding projects and individual contact information. 
+The Crowdfunding ETL (Extract, Transform, Load) Project incorporates skills from previous modules around data uploading, table creation and data manipulation in Python. In this project, we upload and clean data from two excel files, which contain data around crowdfunding projects and individual contact information. 
 
 **Software Used:**
 
@@ -16,8 +16,28 @@ Once dependencies are set, we start by cleaning the Crowdfunding Excel located i
 **Clean and Create Category & Sub-Category Dataframes:**
 When pulling distinct column names from the dataframe, we can see that one column "Category & Sub-category" contains data split by a forward slash (/). Using the str.split function, we can split the column into two net-new columns, category and subcategory. 
 
-Once the new columns are created, we utilize .unique() and len() functions to determine the number of unique categories and sub-categories that the crowdfunding projects fall into. The lengths will be used in a Numpy Array function to assign category IDs, joining with "cat" and "subcat" ids to form a string.
+Once the new columns are created, we utilize unique() and len() functions to determine the number of unique categories and sub-categories that the crowdfunding projects fall into. The lengths will be used in a Numpy Array function to assign category IDs, joining with "cat" and "subcat" ids to form a string.
 
 Two net-new dataframes are created: "category" containing only "category_id" and "category", and "subcategory" containing "subcategory_id" and "subcategory". These will be exported to CSVs for later use. _See below for final dataframes_
 
 ![image](https://github.com/user-attachments/assets/772d376c-2059-4245-9b44-600f0e0163fd)
+
+
+# Part 2: Create the Campaign Dataframe
+**Cleaning and Updating Columns from Crowdfunding Excel:** 
+Columns are selected from the initial Excel file to create a more organized Dataframe with information around campaigns. In order to do this, some column names have to be renamed to be better/more accurate descriptors and other datatypes have to be adjusted.
+
+Using the .rename function, we can adjust the column "blurb" to be "description", "launched_at" to be "launch_date" and "deadline" to be "end_date". 
+Using the .astype function, the "goal" and "pledged" columns can be adjusted to float types, allowing for more decimal points.
+Finally, launch_date and end_date use the pd.to_datetime functions, with inputs unit = 's' and function dt.strftime('%Y-%m-%d %H:%M:%S') to adjust campaign launch and end dates into easily readable formats. 
+
+**Merging with Category Types and Exporting:**
+Splitting category & subcategory and joining on "category" and "subcategory" we are able to import the catid and subcatid for each project, referencing the two dataframes we created in step 1. 
+
+Prior to exporting, we dropped unwanted columns ('staff _pick','spotlight','category & sub-category') and export as a CSV to the Resources folder for later use. _See below for final dataframe_
+
+![image](https://github.com/user-attachments/assets/307e7436-a301-4493-87b2-183eb80be854)<img width="637" alt="Screenshot 2024-12-23 at 7 05 04 PM" src="https://github.com/user-attachments/assets/08d57462-f113-46d1-8a37-b356de28995d" />
+
+
+
+
