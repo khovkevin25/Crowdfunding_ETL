@@ -4,7 +4,7 @@ The Crowdfunding ETL (Extract, Transform, Load) Project incorporates skills from
 
 **Software Used:**
 
-- Python via Jupyter Notebook (starter file included in Resources folder for reference). 
+- Python via Jupyter Notebook (starter file included for reference). 
 - Quick DB (https://www.quickdatabasediagrams.com/)
 - PostgreSQL
 
